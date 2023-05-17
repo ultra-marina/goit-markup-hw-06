@@ -1,0 +1,444 @@
+/* 
+    кольори текста логотипа: #4D5AE5, #2E2F42, #F4F4FD
+    колір текста навігації та заголовків: #2E2F42
+    колір телефона та мейла: #434455
+    колір текста на банері: #FFFFFF
+    колір осн. текста (в секціях, картках портфоліо): #434455
+    колір текста на кнопці: #FFFFFF
+    колір фону верхньої секції та футера: #2E2F42
+    колір фону нашої команди: #F4F4FD
+    колір рамок: #E7E9FC
+    колір кнопок портфоліо: #F4F4FD
+    колір акценту кнопки фільтру портфоліо: #404BBF
+    колір текста в футері: #F4F4FD
+    */
+
+:root {
+  --dark-text-color: #2e2f42;
+  --brand-color: #4d5ae5;
+  --light-text-color: #f4f4fd;
+  --primary-text-color: #434455;
+  --white-text-color: #ffffff;
+  --black-text-color: #000000;
+  --primary-bg-color: #ffffff;
+  --light-bg-color: #f4f4fd;
+  --dark-bg-color: #2e2f42;
+  --border-color: #e7e9fc;
+  --accent-color: #404bbf;
+  --indent: 48px 24px;
+}
+
+/* Box sizing (Те саме прописано в modern-normalize)
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+*/
+
+/* 
+==========================================
+Reset 
+==========================================
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+ul,
+ol {
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  display: block;
+}
+
+/* 
+==========================================
+Styles 
+==========================================
+*/
+
+body {
+  background-color: var(--primary-bg-color);
+  color: var(--primary-text-color);
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+}
+
+.paragraph-text {
+  color: var(--primary-text-color);
+  font-size: 16px;
+}
+
+.logo {
+  font-family: Raleway, sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 1.17;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--brand-color);
+}
+
+.logo-dark {
+  color: var(--dark-text-color);
+}
+
+.logo-light {
+  color: var(--light-text-color);
+}
+
+.list {
+  list-style: none;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.button {
+  display: inline-block;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+}
+
+.container {
+  width: 1158px;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.section {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+.section-title {
+  margin-top: 0;
+  margin-bottom: 72px;
+  color: var(--dark-text-color);
+  font-size: 36px;
+  line-height: 1.11;
+  text-align: center;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+}
+
+.item-title {
+  margin-top: 0;
+  margin-bottom: 8px;
+  color: var(--dark-text-color);
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+}
+
+/* ========== Card set ========== */
+
+.card-set {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--indent);
+}
+
+.card-set-item {
+  flex-basis: calc((100% - var(--indent) * (var(--items) - 1)) / var(--items));
+}
+
+/* ========== Header ========== */
+
+.header {
+  background: var(--primary-bg-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.header .container {
+  display: flex;
+  align-items: center;
+}
+
+.header .link {
+  display: block;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.header .logo {
+  margin-right: 76px;
+}
+
+/* ========== site-nav, contact-nav ========== */
+
+.site-nav {
+  display: flex;
+  margin-right: auto;
+  align-items: center;
+}
+
+.contact-nav {
+  display: flex;
+  margin-left: auto;
+  font-style: normal;
+}
+
+.site-nav.list,
+.contact-nav.list {
+  gap: 40px;
+}
+
+/*
+.site-nav.list .item:not(:last-child),
+.contact-nav.list .item:not(:last-child) {
+  margin-right: 40px;
+}
+*/
+/*
+.site-nav.list .link,
+.contact-nav.list .link {
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+*/
+
+.site-nav.list .link {
+  color: var(--dark-text-color);
+  font-weight: 500;
+}
+.contact-nav.list .link {
+  color: var(--primary-text-color);
+}
+.site-nav .link:hover,
+.site-nav .link:focus,
+.contact-nav .link:hover,
+.contact-nav .link:focus {
+  color: var(--accent-color);
+}
+.site-nav .link.current {
+  color: var(--accent-color);
+}
+
+/* ========== Hero ========== */
+
+/* Hero background */
+.hero {
+  background: var(--dark-bg-color);
+  text-align: center;
+  padding: 188px 0;
+}
+
+/* Hero title. Effective Solutions for Your Business */
+.hero-title {
+  max-width: 496px;
+  margin-top: 0;
+  margin-bottom: 48px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 56px;
+  line-height: 1.07;
+  letter-spacing: 0.02em;
+  color: var(--white-text-color);
+}
+
+/* Hero button. Order Service */
+.hero .button {
+  display: block;
+  margin: auto;
+  padding: 16px 32px;
+  background-color: var(--brand-color);
+  color: var(--white-text-color);
+}
+.hero .button:hover,
+.hero .button:focus {
+  background-color: var(--accent-color);
+  color: var(--white-text-color);
+}
+
+/* ========== Sections ========== */
+
+/* ========== Features ========== */
+
+.section.features {
+  padding-bottom: 0;
+}
+
+.feature-list {
+  --items: 4;
+  gap: 24px;
+}
+
+.feature-list .card-set-item {
+  max-width: 264px;
+}
+
+.feature-list .title {
+  color: var(--title-text-color);
+}
+
+/*
+.feature-list {
+  display: flex;
+  justify-content: center;
+}
+.feature-list .item {
+  width: 264px;
+}
+.feature-list .item:not(:last-child) {
+  margin-right: 24px;
+}
+*/
+
+/* Work */
+
+.work-list {
+  --items: 3;
+  gap: 24px;
+}
+
+/*
+.work-list {
+  display: flex;
+  justify-content: center;
+}
+.work-list .item:not(:last-child) {
+  margin-right: 24px;
+}
+*/
+
+/* Team */
+
+.team {
+  background-color: var(--light-bg-color);
+}
+
+.team-list {
+  --items: 4;
+  gap: 24px;
+}
+
+.team-list .card-set-item {
+  flex-basis: calc((100% - 3 * 24px) / 4);
+  border-radius: 0px 0px 4px 4px;
+  background-color: var(--primary-bg-color);
+  text-align: center;
+}
+
+/*
+.team-list {
+  display: flex;
+  justify-content: center;
+}
+.team-list .item:not(:last-child) {
+  margin-right: 24px;
+}
+*/
+
+.card-content {
+  padding: 32px 16px;
+}
+
+.team-list .title {
+  color: var(--title-text-color);
+}
+
+/* ========== Portfolio ========== */
+
+.section.portfolio {
+  padding-top: 96px;
+}
+
+.portfolio-filter {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 72px;
+}
+
+.portfolio-filter .item:not(:last-child) {
+  margin-right: 24px;
+}
+
+.portfolio .button {
+  padding: 12px 24px;
+  background-color: var(--light-bg-color);
+  border: 1px solid var(--border-color);
+  color: var(--brand-color);
+}
+
+.portfolio .button:hover,
+.portfolio .button:focus {
+  background-color: var(--accent-color);
+  color: var(--white-text-color);
+  border: 1px solid transparent;
+}
+
+.portfolio-list {
+  --items: 3;
+}
+
+.portfolio-list .card-content {
+  border-right: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  border-left: 1px solid var(--border-color);
+}
+
+/*
+.portfolio-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.portfolio-list .item {
+  margin-right: 24px;
+  margin-bottom: 48px;
+}
+.portfolio-list .item:nth-child(3n) {
+  margin-right: 0;
+}
+.portfolio-list .item:nth-last-child(-n + 3) {
+  margin-bottom: 0;
+}
+*/
+
+.portfolio-list .title {
+  color: var(--title-text-color);
+}
+
+/* ========== Footer ========== */
+
+.footer {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background: var(--dark-bg-color);
+}
+
+.footer .logo {
+  display: inline-block;
+  margin-bottom: 16px;
+}
+
+.footer-text {
+  max-width: 264px;
+  color: var(--light-text-color);
+}
