@@ -175,6 +175,8 @@ body {
 .header {
   background: var(--primary-bg-color);
   border-bottom: 1px solid var(--border-color);
+  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
 .header .container {
@@ -407,14 +409,14 @@ body {
   margin-bottom: 8px;
 }
 
-.socials {
+.team .socials {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 24px;
 }
 
-.socials-link {
+.team .socials-link {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -424,13 +426,18 @@ body {
   border-radius: 50%;
 }
 
-.socials-link:hover,
-.socials-link:focus {
+.team .socials-link:hover,
+.team .socials-link:focus {
   background-color: var(--success-color);
+}
+
+.customers .section-title {
+  line-height: 1.11;
 }
 
 .customers-list {
   --items: 6;
+  gap: 24px;
 }
 
 .customers-list .card-set-item {
@@ -499,23 +506,28 @@ body {
   background-color: var(--accent-color);
   color: var(--white-text-color);
   border: 1px solid transparent;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .portfolio-list {
   --items: 3;
 }
 
+.portfolio-list .link {
+  display: block;
+}
+
+.portfolio-list .link:hover,
+.portfolio-list .link:focus {
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+
 .portfolio-list .card-content {
   border-right: 1px solid var(--border-color);
   border-bottom: 1px solid var(--border-color);
   border-left: 1px solid var(--border-color);
-}
-
-.portfolio-list .card-content:hover,
-.portfolio-list .card-content:focus {
-  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
-    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
 /*
@@ -548,12 +560,55 @@ body {
   background-color: var(--dark-bg-color);
 }
 
+.footer-set {
+  display: flex;
+  align-items: baseline;
+}
+
 .footer .logo {
   display: inline-block;
   margin-bottom: 16px;
 }
 
 .footer-text {
-  max-width: 264px;
   color: var(--light-text-color);
+}
+
+.footer-text-bold {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: var(--white-text-color);
+  margin-bottom: 16px;
+}
+
+.block-one {
+  max-width: 264px;
+  margin-right: 120px;
+}
+
+.block-two {
+  max-width: 208px;
+}
+
+.footer .socials {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.footer .socials-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: var(--brand-color);
+  border-radius: 50%;
+}
+
+.footer .socials-link:hover,
+.footer .socials-link:focus {
+  background-color: var(--success-color);
 }
