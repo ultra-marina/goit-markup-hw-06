@@ -434,10 +434,6 @@ body {
   fill: #f4f4fd;
 }
 
-.customers .section-title {
-  line-height: 1.1;
-}
-
 .customers-list {
   --items: 6;
   gap: 24px;
