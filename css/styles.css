@@ -398,7 +398,7 @@ body {
 */
 
 .card-content {
-  padding: 32px 16px;
+  padding: 32px 0;
 }
 
 .team-list .title {
@@ -428,11 +428,15 @@ body {
 
 .team .socials-link:hover,
 .team .socials-link:focus {
-  background-color: var(--success-color);
+  background-color: var(--accent-color);
+}
+
+.socials-icon {
+  fill: #f4f4fd;
 }
 
 .customers .section-title {
-  line-height: 1.11;
+  line-height: 1.1;
 }
 
 .customers-list {
