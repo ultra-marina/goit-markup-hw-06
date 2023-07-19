@@ -696,12 +696,11 @@ body {
   flex-shrink: 0;
   border-radius: 4px;
   border: 1px solid #fff;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   background-color: transparent;
   outline: transparent;
   color: var(--white-text-color);
   font-size: 12px;
-  line-height: 2;
   letter-spacing: 0.48px;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -718,7 +717,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
+  min-width: 165px;
   padding: 8px 24px;
   background-color: var(--brand-color);
   color: var(--white-text-color);
@@ -728,6 +727,10 @@ body {
 .subscribe-form .button:focus {
   background-color: var(--accent-color);
   color: var(--white-text-color);
+}
+
+.footer-button-icon {
+  margin-left: 16px;
 }
 
 /* ========== Modal styles ========== */
@@ -907,7 +910,7 @@ body {
 .modal-form .button {
   display: block;
   margin: auto;
-  width: 169px;
+  min-width: 169px;
   padding: 16px 32px;
   background-color: var(--brand-color);
   color: var(--white-text-color);
