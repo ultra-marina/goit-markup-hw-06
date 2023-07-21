@@ -668,6 +668,11 @@ body {
   box-sizing: border-box;
   height: 88px;
 }
+@media only screen and (min-width: 768px) {
+  .customers-list .card-set-item {
+    width: 168px;
+  }
+}
 
 .customers-link {
   display: flex;
