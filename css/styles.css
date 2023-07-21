@@ -67,6 +67,8 @@ ol {
 
 img {
   display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 /* 
@@ -364,7 +366,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   background-color: var(--dark-bg-color);
-  background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url("../images/hero.jpg");
+  background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url("../images/hero-mob.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -372,17 +374,59 @@ body {
   padding: 188px 0;
 }
 
+@media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+  .hero {
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url("../images/hero-mob@2x.jpg");
+  }
+}
+
+@media only screen and (min-width: 429px) {
+  .hero {
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url("../images/hero-tablet.jpg");
+  }
+  @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+    .hero {
+      background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+        url("../images/hero-tablet@2x.jpg");
+    }
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .hero {
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url("../images/hero.jpg");
+  }
+  @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+    .hero {
+      background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url("../images/hero@2x.jpg");
+    }
+  }
+}
+
 /* Hero title. Effective Solutions for Your Business */
 .hero-title {
-  max-width: 496px;
+  max-width: 320px;
   margin-top: 0;
-  margin-bottom: 48px;
+  margin-bottom: 72px;
   margin-left: auto;
   margin-right: auto;
-  font-size: 56px;
-  line-height: 1.07;
+  font-size: 36px;
+  line-height: 1.11;
   letter-spacing: 0.02em;
   color: var(--white-text-color);
+}
+@media only screen and (min-width: 768px) {
+  .hero-title {
+    max-width: 496px;
+    margin-bottom: 36px;
+    font-size: 56px;
+    line-height: 1.07;
+  }
+}
+@media only screen and (min-width: 1158px) {
+  .hero-title {
+    margin-bottom: 48px;
+  }
 }
 
 /* Hero button. Order Service */
@@ -395,7 +439,8 @@ body {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 .hero .button:hover,
-.hero .button:focus {
+.hero .button:focus,
+.hero .button:active {
   background-color: var(--accent-color);
   color: var(--white-text-color);
 }
@@ -404,34 +449,27 @@ body {
 
 /* ========== Features ========== */
 
-@media only screen and (max-width: 1157px) {
-  .feature-illustration {
-    display: none;
-  }
-  .feature-list .item-title {
-    font-size: 36px;
-    line-height: 1.11;
-  }
-  .feature-list .paragraph-text {
-    font-weight: 500;
-  }
+.feature-list {
+  --items: 1;
+  --indent: 72px;
+  justify-content: center;
+}
+.feature-list .card-set-item {
+  max-width: 396px;
+}
+.feature-list .item-title {
+  font-size: 36px;
+  line-height: 1.11;
+  text-align: center;
+}
+.feature-illustration {
+  display: none;
+}
+.feature-list .paragraph-text {
+  font-weight: 500;
 }
 
-@media only screen and (max-width: 767px) {
-  .feature-list {
-    --items: 1;
-    --indent: 72px;
-    justify-content: center;
-  }
-  .feature-list .card-set-item {
-    max-width: 396px;
-  }
-  .feature-list .item-title {
-    text-align: center;
-  }
-}
-
-@media only screen and (min-width: 768px) and (max-width: 1157px) {
+@media only screen and (min-width: 768px) {
   .feature-list {
     --items: 2;
     --indent: 72px 24px;
@@ -439,6 +477,9 @@ body {
   }
   .feature-list .card-set-item {
     max-width: 356px;
+  }
+  .feature-list .item-title {
+    text-align: left;
   }
 }
 
@@ -689,7 +730,8 @@ body {
 }
 
 .portfolio .button:hover,
-.portfolio .button:focus {
+.portfolio .button:focus,
+.portfolio .button:active {
   background-color: var(--accent-color);
   color: var(--white-text-color);
   border: 1px solid transparent;
@@ -767,25 +809,28 @@ body {
 /* ========== Footer ========== */
 
 .footer {
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding-top: 96px;
+  padding-bottom: 96px;
   background-color: var(--dark-bg-color);
+  text-align: center;
 }
-
 .footer-set {
   display: flex;
-  align-items: baseline;
+  flex-direction: column;
+  gap: 72px;
+  align-items: center;
 }
-
+.block-one {
+  width: 268px;
+}
 .footer .logo {
   display: inline-block;
   margin-bottom: 16px;
 }
-
 .footer-text {
   color: var(--light-text-color);
+  text-align: left;
 }
-
 .footer-text-bold {
   font-size: 16px;
   font-weight: 500;
@@ -794,23 +839,12 @@ body {
   color: var(--white-text-color);
   margin-bottom: 16px;
 }
-
-.block-one {
-  max-width: 264px;
-  margin-right: 120px;
-}
-
-.block-two {
-  max-width: 208px;
-  margin-right: 80px;
-}
-
+/* = Footer socials = */
 .footer .socials {
   display: flex;
   align-items: center;
   gap: 16px;
 }
-
 .footer .socials-link {
   display: flex;
   justify-content: center;
@@ -823,22 +857,23 @@ body {
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-
 .footer .socials-link:hover,
 .footer .socials-link:focus {
   background-color: var(--success-color);
 }
-
-/* ========== Footer subscribe form ========== */
-
+/* = Footer subscribe form = */
 .subscribe-form {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 24px;
+  justify-content: center;
+  gap: 16px;
 }
-
+.subscribe-form-label {
+  width: 100%;
+}
 .subscribe-form-input {
-  width: 264px;
+  width: 100%;
   height: 40px;
   padding: 8px 16px;
   flex-shrink: 0;
@@ -853,15 +888,12 @@ body {
   letter-spacing: 0.48px;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
 .subscribe-form-input:focus {
   border-color: var(--brand-color);
 }
-
 .subscribe-form-input::placeholder {
   color: currentColor;
 }
-
 .subscribe-form .button {
   display: flex;
   align-items: center;
@@ -873,13 +905,58 @@ body {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 .subscribe-form .button:hover,
-.subscribe-form .button:focus {
+.subscribe-form .button:focus,
+.subscribe-form .button:active {
   background-color: var(--accent-color);
   color: var(--white-text-color);
 }
-
 .footer-button-icon {
   margin-left: 16px;
+}
+
+@media only screen and (min-width: 768px) {
+  .footer {
+    text-align: left;
+  }
+  .footer-set {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 72px 24px;
+  }
+  .block-one {
+    max-width: 264px;
+  }
+  .subscribe-form {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 24px;
+  }
+  .subscribe-form-label {
+    width: 264px;
+  }
+}
+
+@media only screen and (min-width: 1158px) {
+  .footer {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+  .footer-set {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    /*align-items: baseline;*/
+    gap: 0;
+  }
+  .block-one {
+    margin-right: 120px;
+  }
+  .block-two {
+    max-width: 208px;
+    margin-right: 80px;
+  }
 }
 
 /* ========== Modal styles ========== */
@@ -1104,7 +1181,8 @@ body {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 .modal-form .button:hover,
-.modal-form .button:focus {
+.modal-form .button:focus,
+.modal-form .button:active {
   background-color: var(--accent-color);
   color: var(--white-text-color);
 }
@@ -1194,6 +1272,7 @@ body {
   text-decoration: none;
   color: var(--dark-text-color);
   font-size: 36px;
+  font-style: normal;
   font-weight: 700;
   line-height: 1.11;
   letter-spacing: 0.72px;
@@ -1213,19 +1292,19 @@ body {
   margin-bottom: 48px;
 }
 
-.menu-container .mobile-contacts .phone {
+.menu-container .mobile-contacts .phone .link {
   color: var(--brand-color);
   font-size: 36px;
-  /*font-style: normal;*/
+  font-style: normal;
   font-weight: 700;
   line-height: 1.11;
   letter-spacing: 0.72px;
 }
 
-.menu-container .mobile-contacts .email {
+.menu-container .mobile-contacts .email .link {
   color: var(--primary-text-color);
   font-size: 20px;
-  /*font-style: normal;*/
+  font-style: normal;
   font-weight: 500;
   line-height: 1.2;
   letter-spacing: 0.4px;
