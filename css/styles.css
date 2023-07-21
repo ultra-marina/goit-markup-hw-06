@@ -679,12 +679,12 @@ body {
 
 @media only screen and (max-width: 767.8px) {
   .customers-list .card-set-item {
-    min-width: 190px;
+    width: 190px;
   }
 }
 @media only screen and (min-width: 768px) {
   .customers-list .card-set-item {
-    min-width: 168px;
+    width: 168px;
   }
 }
 
@@ -954,6 +954,12 @@ body {
   }
   .subscribe-form-label {
     width: 264px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1157.8px) {
+  .footer {
+    padding-left: 108px;
   }
 }
 
