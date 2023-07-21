@@ -1071,6 +1071,13 @@ body {
   font-weight: 500;
   letter-spacing: 0.32px;
 }
+@media only screen and (max-width: 427.8px) {
+  .modal-caption {
+    font-size: 12px;
+    font-weight: 400;
+    text-align: left;
+  }
+}
 
 .modal-form-field {
   position: relative;
@@ -1295,7 +1302,7 @@ body {
   margin-bottom: auto;
 }
 
-.mobile-menu-item:not(:last-child) {
+.mobile-menu-item {
   margin-bottom: 40px;
 }
 
